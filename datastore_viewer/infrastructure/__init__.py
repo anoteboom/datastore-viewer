@@ -46,7 +46,7 @@ def get_client(project_name: str, namespace: Optional[str] = None):
 class DatastoreViewerRepository:
     def __init__(self, project_name: str, namespace: Optional[str] = None):
         self._project_name = project_name
-        self._namespace = namespace or os.environ.get('namespace')
+        self._namespace = namespace or os.environ.get('DATASTORE_NAMESPACE')
         self._datastore_client = get_client(project_name=self._project_name, namespace=self._namespace)
 
     @property
